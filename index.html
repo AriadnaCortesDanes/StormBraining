@@ -55,6 +55,9 @@
         <span class = "button__text2"> BOT </span>
     </button>
 
+    <button id = "count" class="btn-count" >
+        <img src="https://i.pinimg.com/222x/93/b5/f9/93b5f9913d2e4316cd6e541c67b9aed0.jpg">
+    </button>
 
         <h2>
             MyName:
@@ -229,7 +232,7 @@ Whoever runs out of lives first, loses.
                 //if (cInput === "Recarga") {
                     //  cRecarga++;
                 //}
-                
+                nextRound();                
             }
 
             // actualitza el valor de les recargues
@@ -292,6 +295,16 @@ Whoever runs out of lives first, loses.
                 cVidas = 1;
                 updateVidas();
             }
+            
+            function nextRound() {
+                /*
+                one();
+                setTimeout(two(),1000);
+                setTimeout(three(),1000);
+                setTimeout(null,1000);
+                */
+            }
+            
         </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

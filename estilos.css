@@ -50,6 +50,23 @@ body {
 	font-weight: 500;
 	cursor: pointer;
 }
+
+.btn-count {
+	display: inline-flex;
+	align: center;
+	width: 75px;
+	height: 75px;
+	padding: 0;
+	background: #a47171;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	overflow: hidden;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 25px;
+	font-weight: 500;
+	cursor: pointer;
+}
 .contenedor {
 	width: 90%;
 	max-width: 1000px;
@@ -170,6 +187,12 @@ body {
 	position: fixed;
 	left: 45%;
 	top: 25%;
+}
+
+#count {
+	position: fixed;
+	left: 47%;
+	top: 47%;
 }
 
 
