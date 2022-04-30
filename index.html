@@ -55,7 +55,7 @@
         <span class = "button__text2"> BOT </span>
     </button>
 
-    <button id = "count" class="btn-count" >
+    <button id = "count" class="btn-count">
         <img src="https://i.pinimg.com/222x/93/b5/f9/93b5f9913d2e4316cd6e541c67b9aed0.jpg">
     </button>
 
@@ -337,12 +337,20 @@ Whoever runs out of lives first, loses.
             }
             
             function nextRound() {
-                /*
                 one();
                 setTimeout(two(),1000);
                 setTimeout(three(),1000);
                 setTimeout(null,1000);
-                */
+            }
+
+            function one() {
+                document.getElementById("count").src = "https://dibujosycolores.com/numeros/numero-1/numero-1-1.jpg";
+            }
+            function two() {
+                document.getElementById("count").src = "https://dibujosycolores.com/numeros/numero-2/numero-2-1.jpg";
+            }
+            function three() {
+                document.getElementById("count").src = "https://dibujosycolores.com/numeros/numero-2/numero-3-1.jpg";
             }
             
         </script>
