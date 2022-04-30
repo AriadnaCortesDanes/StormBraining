@@ -54,25 +54,24 @@ body {
 	width: 90%;
 	max-width: 1000px;
 	margin: 20px auto;
-    align-items: center;
 }
 
-.contenedor article {
-    align-items: center;
-	line-height: 28px;
+.contenedor .logo {
+	text-align: center;
 }
 
-.contenedor article h1 {
+
+.contenedor  h1 {
 	font-size: 50px;
 	text-align: center;
 	padding: 50px 0;
 }
 
-.contenedor article p {
+.contenedor  p {
 	margin-bottom: 20px;
 }
 
-.contenedor article .btn-abrir-popup {
+.contenedor  .btn-abrir-popup {
 	padding: 0 5px;
 	margin-bottom: 20px;
 	height: 40px;
@@ -86,9 +85,13 @@ body {
 	cursor: pointer;
 	transition: .3s ease all;
 	cursor: pointer;
+	/*float: right;*/
+
+	position: absolute;
+	right: 3vw;
 }
 
-.contenedor article .btn-abrir-popup:hover {
+.contenedor  .btn-abrir-popup:hover {
 	background: rgba(94,125,227, .9);
 }
 
