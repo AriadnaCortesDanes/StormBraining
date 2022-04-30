@@ -320,6 +320,7 @@ Whoever runs out of lives first, loses.
 
             // quan algu perd definitivament la partida (vidas = 0)
             function fin(g) {
+                // 0: guanya computer, 1: guanya player, 2: empaten
                 if (g === 0) {
                     var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
                     overlay = document.getElementById('winOverlay'),
