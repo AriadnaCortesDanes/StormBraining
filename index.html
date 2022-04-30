@@ -55,210 +55,197 @@
 		</div>
 	</div>
 
-    <!-- BOTONS CARTES -->
-    <button id="Recarga" class="buttonGame">
-               
-    </button>
-    <button id="Escut" class="buttonGame"><img src = "https://images.emojiterra.com/google/android-11/512px/1f6e1.png" 
-        width = "120" height = "120"> </button>
-    <button id="Dispara" class="buttonGame">
-        
-    </button>
-    <button id="Random" class="buttonGame">
-        
-    </button>
-    <button id="BotResponse" class="buttonResult">
-        <span class = "button__text2"> BOT </span>
-    </button>
-
-    <h2>
-        MyName:
-    </h2>
-    <p id="afegir_precarga">
-            Recarga:
-    </p>   
-    <p id="afegir_pvidas">
-            Vidas: 
-    </p>
-    <h2>
-        Computer:
-    </h2>
-    <p id="afegir_crecarga">
-        Recarga:
-    </p>
-    <p id="afegir_cvidas">
-            Vidas: 
-    </p>
-    <p id="quefacomputer"></p>
-
-
-
     <!-- codi de logica del joc-->
-    <script>
-        const options = document.querySelectorAll(".options");
-
-        let pRecarga = 0;
-        let cRecarga = 0;
-        let pVidas = 1;
-        let cVidas = 1;
-
-        document.getElementById("afegir_precarga").innerHTML += pRecarga;
-        document.getElementById("afegir_crecarga").innerHTML += cRecarga;
-        document.getElementById("afegir_pvidas").innerHTML += pVidas;
-        document.getElementById("afegir_cvidas").innerHTML += cVidas;
-
+    <button class="options">Recarga</button>
+    <button class="options">Escut</button>
+    <button class="options">Dispara</button>
+    <button class="options">Vidas</button>
     
-        options.forEach((option) => {
-          option.addEventListener("click", function () {
-            const pInput = this.textContent;
-            
-            const cOptions = ["Recarga", "Escut", "Dispara", "Vidas"];
-            const cInput = cOptions[Math.floor(Math.random() * 4)];
+        <h2>
+            MyName:
+        </h2>
+        <p id="afegir_precarga">
+                Recarga:
+        </p>   
+        <p id="afegir_pvidas">
+                Vidas: 
+        </p>
+        <h2>
+            Computer:
+        </h2>
+        <p id="afegir_crecarga">
+            Recarga:
+        </p>
+        <p id="afegir_cvidas">
+                Vidas: 
+        </p>
+        <p id="quefacomputer"></p>
 
-            document.getElementById("quefacomputer").innerHTML = cInput;
+        <script>
+            const options = document.querySelectorAll(".options");
 
-            compareInputs(pInput, cInput);
-            updateValors();
-          });
-        });
+            let pRecarga = 0;
+            let cRecarga = 0;
+            let pVidas = 1;
+            let cVidas = 1;
 
-        function compareInputs(pInput, cInput) {
-            const currentMatch = `${pInput} vs ${cInput}`;
-            // if (pInput === cInput) {
-               // alert(`${currentMatch} is a Tie`);
-                //return;
-            //}
+            document.getElementById("afegir_precarga").innerHTML += pRecarga;
+            document.getElementById("afegir_crecarga").innerHTML += cRecarga;
+            document.getElementById("afegir_pvidas").innerHTML += pVidas;
+            document.getElementById("afegir_cvidas").innerHTML += cVidas;
 
-            // si el computer intenta disparar i no te recargas, fa una recarga
-            if (cInput === "Dispara" && cRecarga == 0) {
-                cInput = "Recarga";
-            }
+        
+            options.forEach((option) => {
+              option.addEventListener("click", function () {
+                const pInput = this.textContent;
+                
+                const cOptions = ["Recarga", "Escut", "Dispara", "Vidas"];
+                const cInput = cOptions[Math.floor(Math.random() * 4)];
 
-            // si el jugador decideix recarregar
-            if (pInput === "Recarga") {
-                pRecarga++;
-                if (cInput === "Recarga") {
-                    cRecarga++;
+                document.getElementById("quefacomputer").innerHTML = cInput;
+
+                compareInputs(pInput, cInput);
+                updateValors();
+              });
+            });
+
+            function compareInputs(pInput, cInput) {
+                const currentMatch = `${pInput} vs ${cInput}`;
+                // if (pInput === cInput) {
+                   // alert(`${currentMatch} is a Tie`);
+                    //return;
+                //}
+
+                // si el computer intenta disparar i no te recargas, fa una recarga
+                if (cInput === "Dispara" && cRecarga == 0) {
+                    cInput = "Recarga";
                 }
-                else if (cInput === "Dispara") {
-                    --cRecarga;
-                    muerte("p");
+
+                // si el jugador decideix recarregar
+                if (pInput === "Recarga") {
+                    pRecarga++;
+                    if (cInput === "Recarga") {
+                        cRecarga++;
+                    }
+                    else if (cInput === "Dispara") {
+                        --cRecarga;
+                        muerte("p");
+                    }
+                    else if (cInput === "Vidas") {
+                        ++cVidas;
+                        updateVidas();
+                    }
+                    else if (cInput === "Escut") {} // no passa res
                 }
-                else if (cInput === "Vidas") {
-                    ++cVidas;
+
+                // si el jugador decideix disparar
+                else if (pInput === "Disparar") {
+                    if (pRecarga === 0 || cInput === "Escut") {}
+                    else if (cInput === "Vidas") {
+                        --pRecarga;
+                    }
+                    else if (cInput === "Recarga") {
+                        cRecarga++;
+                        // si pRecarga > 0
+                        --pRecarga;
+                        muerte("c");
+                    }
+                    else if (cInput === "Disparar") {
+                        --pRecarga;
+                        --cRecarga;
+                        muertedos(); // quan es disparen els dos alhora
+                    }
+                }
+
+                // si el jugador decideix posar escut
+                else if (pInput === "Escut") {
+                    if (cInput === "Recarga") {
+                        ++cRecarga;
+                    }
+                    else if (cInput === "Disparar") {
+                        --cRecarga;
+                    }
+                    else if (cInput === "Escut") {}
+                    else if (cInput === "Vidas") {
+                        ++cVidas;
+                        updateVidas();
+                    }
+                }
+
+                else if (pInput === "Vidas") {
+                    ++pVidas;
                     updateVidas();
+                    if (cInput === "Recarga") {
+                        ++cRecarga;
+                    }
+                    else if (cInput === "Disparar") {
+                        --cRecarga;
+                    }
+                    else if (cInput === "Escut") {}
+                    else if (cInput === "Vidas") {
+                        ++cVidas;
+                    }
                 }
-                else if (cInput === "Escut") {} // no passa res
+
+                //if (cInput === "Recarga") {
+                    //  cRecarga++;
+                //}
+                
             }
 
-            // si el jugador decideix disparar
-            else if (pInput === "Disparar") {
-                if (pRecarga === 0 || cInput === "Escut") {}
-                else if (cInput === "Vidas") {
-                    --pRecarga;
-                }
-                else if (cInput === "Recarga") {
-                    cRecarga++;
-                    // si pRecarga > 0
-                    --pRecarga;
-                    muerte("c");
-                }
-                else if (cInput === "Disparar") {
-                    --pRecarga;
-                    --cRecarga;
-                    muertedos(); // quan es disparen els dos alhora
-                }
+            // actualitza el valor de les recargues
+            function updateValors() {
+                document.getElementById("afegir_precarga").textContent = "Recarga: "+ pRecarga;
+                document.getElementById("afegir_crecarga").textContent = "Recarga: "+ cRecarga;
             }
 
-            // si el jugador decideix posar escut
-            else if (pInput === "Escut") {
-                if (cInput === "Recarga") {
-                    ++cRecarga;
-                }
-                else if (cInput === "Disparar") {
-                    --cRecarga;
-                }
-                else if (cInput === "Escut") {}
-                else if (cInput === "Vidas") {
-                    ++cVidas;
+            // quan algu perd una vida
+            function muerte(who) {
+                if (who === "p") {
+                    --pVidas;
                     updateVidas();
+                    if (pVidas === 0) {
+                        // RESULTAT: GUANYA COMPUTER
+                        fin();
+                    }
+                }
+                else if (who === "c") {
+                    --cVidas;
+                    updateVidas();
+                    if (cVidas === 0) {
+                        // RESULTAT: GUANYA PLAYER
+                        fin();
+                    }
                 }
             }
 
-            else if (pInput === "Vidas") {
-                ++pVidas;
-                updateVidas();
-                if (cInput === "Recarga") {
-                    ++cRecarga;
-                }
-                else if (cInput === "Disparar") {
-                    --cRecarga;
-                }
-                else if (cInput === "Escut") {}
-                else if (cInput === "Vidas") {
-                    ++cVidas;
-                }
-            }
-
-            //if (cInput === "Recarga") {
-                //  cRecarga++;
-            //}
-            
-        }
-
-        // actualitza el valor de les recargues
-        function updateValors() {
-            document.getElementById("afegir_precarga").textContent = "Recarga: "+ pRecarga;
-            document.getElementById("afegir_crecarga").textContent = "Recarga: "+ cRecarga;
-        }
-
-        // quan algu perd una vida
-        function muerte(who) {
-            if (who === "p") {
+            // quan els dos es disparen
+            function muertedos() {
                 --pVidas;
-                updateVidas();
-                if (pVidas === 0) {
-                    // RESULTAT: GUANYA COMPUTER
-                    fin();
-                }
-            }
-            else if (who === "c") {
                 --cVidas;
                 updateVidas();
-                if (cVidas === 0) {
-                    // RESULTAT: GUANYA PLAYER
+                if (pVidas === 0 && cVidas === 0) {
+                    // RESULTAT: EMPATEN PLAYER I COMPUTER
                     fin();
                 }
             }
-        }
 
-        // quan els dos es disparen
-        function muertedos() {
-            --pVidas;
-            --cVidas;
-            updateVidas();
-            if (pVidas === 0 && cVidas === 0) {
-                // RESULTAT: EMPATEN PLAYER I COMPUTER
-                fin();
+            // actualitza valor de les vides dels jugadors
+            function updateVidas() {
+                document.getElementById("afegir_pvidas").textContent = "Vidas: "+ pVidas;
+                document.getElementById("afegir_cvidas").textContent = "Vidas: "+ cVidas;
             }
-        }
 
-        // actualitza valor de les vides dels jugadors
-        function updateVidas() {
-            document.getElementById("afegir_pvidas").textContent = "Vidas: "+ pVidas;
-            document.getElementById("afegir_cvidas").textContent = "Vidas: "+ cVidas;
-        }
-
-        // quan algu perd definitivament la partida (vidas = 0)
-        function fin() {
-            pRecarga = 0;
-            cRecarga = 0;
-            updateValors();
-            pVidas = 1;
-            cVidas = 1;
-            updateVidas();
-        }
-    </script>
+            // quan algu perd definitivament la partida (vidas = 0)
+            function fin() {
+                pRecarga = 0;
+                cRecarga = 0;
+                updateValors();
+                pVidas = 1;
+                cVidas = 1;
+                updateVidas();
+            }
+        </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	<script src="popup.js"></script>
