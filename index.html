@@ -160,8 +160,6 @@ Whoever runs out of lives first, loses.
                 const cOptions = ["recarga", "escut", "dispara", "vidas"];
                 const cInput = cOptions[Math.floor(Math.random() * 4)];
 
-                console.log(cInput);
-                console.log(document.getElementById("BotResponse").src);
                 document.getElementById("botresponse").src = document.getElementById(cInput).src;
 
                 document.getElementById("quefacomputer").innerHTML = pInput;
@@ -204,16 +202,17 @@ Whoever runs out of lives first, loses.
                 // si el jugador decideix disparar
                 if (pInput === "Dispara") {
                     // if (pRecarga === 0) {}
-                    if (cInput === "escut" && pRecarga > 0) {
+                    if (cInput === "vidas" && pRecarga > 0) {
                         --pRecarga;
                     }
-                    else if (cInput === "escut" && pRecarga === 0) {
+                    else if (cInput === "vidas" && pRecarga === 0) {
                         ++cVidas;
                         updateVidas();
                     }
-                    else if (cInput === "vidas") {
+                    else if (cInput === "escut" && pRecarga > 0) {
                         --pRecarga;
                     }
+                    else if (cInput === "escut" && pRecarga === 0) {}
                     else if (cInput === "recarga") {
                         cRecarga++;
                         if (pRecarga > 0)  {
@@ -339,8 +338,9 @@ Whoever runs out of lives first, loses.
                 popup.classList.add('active');
             });
             }
-
+            
             function nextRound() {
+<<<<<<< HEAD
                 //one();
                 document.getElementById("count").src = "https://dibujosycolores.com/numeros/numero-1/numero-1-1.jpg";
                 //setTimeout(two,1000);
@@ -356,6 +356,14 @@ Whoever runs out of lives first, loses.
             }
             function three() {
                 document.getElementById("count").src = "https://dibujosycolores.com/numeros/numero-2/numero-3-1.jpg";
+=======
+                /*
+                one();
+                setTimeout(two(),1000);
+                setTimeout(three(),1000);
+                setTimeout(null,1000);
+                */
+>>>>>>> 58d3b3363e422f3a95f85e7aec402b0cca5f1b02
             }
             
         </script>
