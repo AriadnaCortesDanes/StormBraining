@@ -10,7 +10,7 @@ body {
 	padding: 0 30px;
 }
 
-.buttonGame {
+.options {
 	display: inline-flex;
 	align: center;
 	width: 120px;
@@ -26,11 +26,11 @@ body {
 	font-weight: 500;
 	cursor: pointer;
 }
-.buttonGame:hover {
+.options:hover {
 	background: #008168;
 }
 
-.buttonGame:active {
+.options:active {
 	background: #006e58;
 }
 
@@ -117,6 +117,7 @@ body {
 }
 
 /* Aspect of buttons recarga/ dispara/ escut */
+
 
 #Recarga {
 	position: fixed;
