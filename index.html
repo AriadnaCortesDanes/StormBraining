@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id= "container" class="contenedor">
-		<img id="logo" src="/logo.png">
+		<img id="logo" src="logo.png">
         <button id="btn-abrir-popup" class="btn-abrir-popup">
             <span class = "button__text"> How to play? </span>
             <span class = "button__icon">
@@ -56,10 +56,19 @@
 	</div>
 
     <!-- codi de logica del joc-->
-    <button class="options">Recarga</button>
-    <button class="options">Escut</button>
-    <button class="options">Dispara</button>
-    <button class="options">Vidas</button>
+    <button id= "Recarga" class="options">
+        <img src="https://cdn0.iconfinder.com/data/icons/glyphpack/41/refresh-512.png"
+        width = "120" height = "120">
+    </button>
+    <button id= "Escut" class="options">Escut<img src="https://cdn0.iconfinder.com/data/icons/glyphpack/41/refresh-512.png"
+        width = "120" height = "120">
+    </button>
+    <button id= "Dispara" class="options">Dispara<img src="https://images.vexels.com/media/users/3/158137/isolated/preview/9c38dddc84fdc68a27ca10230595f183-icono-detallado-de-revolver.png"
+        width = "120" height = "120">
+    </button>
+    <button id= "Vidas" class="options">Vidas<img src="https://cdn0.iconfinder.com/data/icons/glyphpack/41/refresh-512.png"
+        width = "120" height = "120">
+    </button>
     
         <h2>
             MyName:
@@ -97,7 +106,7 @@
         
             options.forEach((option) => {
               option.addEventListener("click", function () {
-                const pInput = this.textContent;
+                const pInput = this.id;
                 
                 const cOptions = ["Recarga", "Escut", "Dispara", "Vidas"];
                 const cInput = cOptions[Math.floor(Math.random() * 4)];
