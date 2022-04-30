@@ -166,8 +166,9 @@ body {
 }
 
 #BotResponse {
+	border-radius: 15px;
 	position: fixed;
-	left: 42%;
+	left: 45%;
 	top: 25%;
 }
 
