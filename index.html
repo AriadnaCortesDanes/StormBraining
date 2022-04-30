@@ -137,7 +137,8 @@ Whoever runs out of lives first, loses.
                 console.log(document.getElementById("BotResponse").src);
                 document.getElementById("botresponse").src = document.getElementById(cInput).src;
 
-                document.getElementById("quefacomputer").innerHTML = cInput;
+                document.getElementById("quefacomputer").innerHTML = pInput;
+                document.getElementById("quefacomputer").innerHTML += cInput;
 
                 compareInputs(pInput, cInput);
                 updateValors();
