@@ -19,7 +19,7 @@ body {
 	background: #009578;
 	border: none;
 	outline: none;
-	border-radius: 5px;
+	border-radius: 15px;
 	overflow: hidden;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 25px;
@@ -79,7 +79,7 @@ body {
 	border: none;
 	color: #fff;
 	background: #5E7DE3;
-	border-radius: 3px;
+	border-radius: 6px;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	cursor: pointer;
