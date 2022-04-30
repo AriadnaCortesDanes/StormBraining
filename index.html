@@ -204,8 +204,12 @@ Whoever runs out of lives first, loses.
                 // si el jugador decideix disparar
                 if (pInput === "Dispara") {
                     // if (pRecarga === 0) {}
-                    if (cInput === "escut") {
+                    if (cInput === "escut" && pRecarga > 0) {
                         --pRecarga;
+                    }
+                    else if (cInput === "escut" && pRecarga === 0) {
+                        ++cVidas;
+                        updateVidas();
                     }
                     else if (cInput === "vidas") {
                         --pRecarga;
