@@ -118,7 +118,6 @@ Whoever runs out of lives first, loses.
 
         <div class="overlay" id="winOverlay">
 			<div class="popup" id="winPopup">
-				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
 				<h3>YOU'RE THE WINNER</h3>
 				<h4>Congratulations!</h4>
 				<form action="">
@@ -204,12 +203,8 @@ Whoever runs out of lives first, loses.
                 // si el jugador decideix disparar
                 if (pInput === "Dispara") {
                     // if (pRecarga === 0) {}
-                    if (cInput === "escut" && pRecarga > 0) {
+                    if (cInput === "escut") {
                         --pRecarga;
-                    }
-                    else if (cInput === "escut" && pRecarga === 0) {
-                        ++cVidas;
-                        updateVidas();
                     }
                     else if (cInput === "vidas") {
                         --pRecarga;
@@ -333,11 +328,12 @@ Whoever runs out of lives first, loses.
                 popup = document.getElementById('winPopup'),
                 btnCerrarPopup = document.getElementById('btn-cerrar-popup'),
                 btnStart = document.getElementById('btn-start');
-
-                btnAbrirPopup.addEventListener('click', function(){
                 overlay.classList.add('active');
                 popup.classList.add('active');
-            });
+            }
+
+            function start() {
+                
             }
 
             function nextRound() {
