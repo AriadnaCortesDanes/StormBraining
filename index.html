@@ -137,6 +137,27 @@ Whoever runs out of lives first, loses.
 			</div>
 		</div>
 
+        <div class="overlayz" id="winOverlayz">
+			<div class="popupz" id="winPopupz">
+				<h3>YOU LOST</h3>
+				<h4>Congratulations!</h4>
+				<form action="">
+					<div class="contenedor-inputs">
+                        <p>
+                           You can play againg with the Start! button.
+                        </p>
+					</div>
+                    <button id="btn-start" class="btn-start">
+                        <span class = "button__text"> START! </span>
+                        <span class = "button__icon">
+                            <ion-icon name="checkmark-circle-outline"></ion-icon>
+                        </span> 
+               
+                    </button>
+				</form>
+			</div>
+		</div>
+
         
         <script>
             const options = document.querySelectorAll(".options");
@@ -330,6 +351,13 @@ Whoever runs out of lives first, loses.
                     popup.classList.add('active');
                 }
                 else if (g === 1) {
+                    var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
+                    overlayz = document.getElementById('winOverlayz'),
+                    popupz = document.getElementById('winPopupz'),
+                    btnCerrarPopup = document.getElementById('btn-cerrar-popup'),
+                    btnStart = document.getElementById('btn-start');
+                    overlay.classList.add('active');
+                    popup.classList.add('active');
                 }
             }
 
