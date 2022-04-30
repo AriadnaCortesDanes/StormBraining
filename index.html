@@ -167,7 +167,10 @@
 
                 // si el jugador decideix disparar
                 if (pInput === "Dispara") {
-                    if (pRecarga === 0 || cInput === "escut") {}
+                    if (pRecarga === 0) {}
+                    else if (cInput === "escut") {
+                        --pRecarga;
+                    }
                     else if (cInput === "vidas") {
                         --pRecarga;
                     }
