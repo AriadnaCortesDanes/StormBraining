@@ -280,7 +280,7 @@ Whoever runs out of lives first, loses.
                     updateVidas();
                     if (pVidas === 0) {
                         // RESULTAT: GUANYA COMPUTER
-                        fin();
+                        fin(0);
                     }
                 }
                 else if (who === "c") {
@@ -288,7 +288,7 @@ Whoever runs out of lives first, loses.
                     updateVidas();
                     if (cVidas === 0) {
                         // RESULTAT: GUANYA PLAYER
-                        fin();
+                        fin(1);
                     }
                 }
             }
@@ -300,15 +300,15 @@ Whoever runs out of lives first, loses.
                 updateVidas();
                 if (pVidas === 0 && cVidas === 0) {
                     // RESULTAT: EMPATEN PLAYER I COMPUTER
-                    fin();
+                    fin(2);
                 }
                 else if (pVidas === 0) {
                     // RESULTAT: GUANYA COMPUTER
-                    fin();
+                    fin(0);
                 }
                 else if (cVidas === 0) {
                     // RESULTAT: GUANYA PLAYER
-                    fin();
+                    fin(1);
                 }
             }
 
@@ -319,14 +319,18 @@ Whoever runs out of lives first, loses.
             }
 
             // quan algu perd definitivament la partida (vidas = 0)
-            function fin() {
-                var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
-                overlay = document.getElementById('winOverlay'),
-                popup = document.getElementById('winPopup'),
-                btnCerrarPopup = document.getElementById('btn-cerrar-popup'),
-                btnStart = document.getElementById('btn-start');
-                overlay.classList.add('active');
-                popup.classList.add('active');
+            function fin(g) {
+                if (g === 0) {
+                    var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
+                    overlay = document.getElementById('winOverlay'),
+                    popup = document.getElementById('winPopup'),
+                    btnCerrarPopup = document.getElementById('btn-cerrar-popup'),
+                    btnStart = document.getElementById('btn-start');
+                    overlay.classList.add('active');
+                    popup.classList.add('active');
+                }
+                else if (g === 1) {
+                }
             }
 
             function start() {
