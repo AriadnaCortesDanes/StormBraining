@@ -35,21 +35,23 @@
 
     <!-- codi de logica del joc-->
     <button id= "Recarga" class="options">
-        <img src="https://icons-for-free.com/download-icon-refresh+reload+update+icon-1320191166843452904_256.png"
+        <img id="recarga" src="https://icons-for-free.com/download-icon-refresh+reload+update+icon-1320191166843452904_256.png"
         width = "120" height = "120">
     </button>
-    <button id= "Escut" class="options"><img src="https://images.emojiterra.com/google/android-11/512px/1f6e1.png"
+    <button id= "Escut" class="options"><img id="escut" src="https://images.emojiterra.com/google/android-11/512px/1f6e1.png"
         width = "120" height = "120">
     </button>
-    <button id= "Dispara" class="options"><img src="https://images.vexels.com/media/users/3/158137/isolated/preview/9c38dddc84fdc68a27ca10230595f183-icono-detallado-de-revolver.png"
+    <button id= "Dispara" class="options"><img id="dispara" src="https://images.vexels.com/media/users/3/158137/isolated/preview/9c38dddc84fdc68a27ca10230595f183-icono-detallado-de-revolver.png"
         width = "120" height = "120">
     </button>
-    <button id= "Vidas" class="options"><img src="https://www.heypoorplayer.com/wp-content/uploads/2014/06/heart-e1403272720870.png"
+    <button id= "Vidas" class="options"><img id="vidas" src="https://www.heypoorplayer.com/wp-content/uploads/2014/06/heart-e1403272720870.png"
         width = "120" height = "120">
     </button>
     
     </button>
     <button id="BotResponse" class="buttonResult">
+        <img id="botresponse" src="https://www.heypoorplayer.com/wp-content/uploads/2014/06/heart-e1403272720870.png"
+        width = "120" height = "120">
         <span class = "button__text2"> BOT </span>
     </button>
 
@@ -74,7 +76,7 @@
         </p>
         <p id="quefacomputer"></p>
 
-        
+
         <div class="overlay" id="overlay">
 			<div class="popup" id="popup">
 				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
@@ -114,8 +116,12 @@
               option.addEventListener("click", function () {
                 const pInput = this.id;
                 
-                const cOptions = ["Recarga", "Escut", "Dispara", "Vidas"];
+                const cOptions = ["recarga", "escut", "dispara", "vidas"];
+                //const cUrls = [, , , ];
                 const cInput = cOptions[Math.floor(Math.random() * 4)];
+                console.log(cInput);
+                console.log(document.getElementById("BotResponse").src);
+                document.getElementById("botresponse").src = document.getElementById(cInput).src;
 
                 document.getElementById("quefacomputer").innerHTML = cInput;
 
