@@ -109,62 +109,153 @@
 
     
         options.forEach((option) => {
-        option.addEventListener("click", function () {
+          option.addEventListener("click", function () {
             const pInput = this.textContent;
             
             const cOptions = ["Recarga", "Escut", "Dispara", "Vidas"];
             const cInput = cOptions[Math.floor(Math.random() * 4)];
 
+            document.getElementById("quefacomputer").innerHTML = cInput;
+
             compareInputs(pInput, cInput);
             updateValors();
-        });
+          });
         });
 
         function compareInputs(pInput, cInput) {
             const currentMatch = `${pInput} vs ${cInput}`;
             // if (pInput === cInput) {
-            // alert(`${currentMatch} is a Tie`);
+               // alert(`${currentMatch} is a Tie`);
                 //return;
             //}
 
+            // si el computer intenta disparar i no te recargas, fa una recarga
+            if (cInput === "Dispara" && cRecarga == 0) {
+                cInput = "Recarga";
+            }
+
+            // si el jugador decideix recarregar
             if (pInput === "Recarga") {
                 pRecarga++;
-                if (cInput === "Dispara") {
+                if (cInput === "Recarga") {
+                    cRecarga++;
+                }
+                else if (cInput === "Dispara") {
+                    --cRecarga;
                     muerte("p");
                 }
+                else if (cInput === "Vidas") {
+                    ++cVidas;
+                    updateVidas();
+                }
+                else if (cInput === "Escut") {} // no passa res
             }
-            if (cInput === "Recarga") {
-                cRecarga++;
+
+            // si el jugador decideix disparar
+            else if (pInput === "Disparar") {
+                if (pRecarga === 0 || cInput === "Escut") {}
+                else if (cInput === "Vidas") {
+                    --pRecarga;
+                }
+                else if (cInput === "Recarga") {
+                    cRecarga++;
+                    // si pRecarga > 0
+                    --pRecarga;
+                    muerte("c");
+                }
+                else if (cInput === "Disparar") {
+                    --pRecarga;
+                    --cRecarga;
+                    muertedos(); // quan es disparen els dos alhora
+                }
             }
+
+            // si el jugador decideix posar escut
+            else if (pInput === "Escut") {
+                if (cInput === "Recarga") {
+                    ++cRecarga;
+                }
+                else if (cInput === "Disparar") {
+                    --cRecarga;
+                }
+                else if (cInput === "Escut") {}
+                else if (cInput === "Vidas") {
+                    ++cVidas;
+                    updateVidas();
+                }
+            }
+
+            else if (pInput === "Vidas") {
+                ++pVidas;
+                updateVidas();
+                if (cInput === "Recarga") {
+                    ++cRecarga;
+                }
+                else if (cInput === "Disparar") {
+                    --cRecarga;
+                }
+                else if (cInput === "Escut") {}
+                else if (cInput === "Vidas") {
+                    ++cVidas;
+                }
+            }
+
+            //if (cInput === "Recarga") {
+                //  cRecarga++;
+            //}
             
         }
 
+        // actualitza el valor de les recargues
         function updateValors() {
             document.getElementById("afegir_precarga").textContent = "Recarga: "+ pRecarga;
             document.getElementById("afegir_crecarga").textContent = "Recarga: "+ cRecarga;
         }
 
+        // quan algu perd una vida
         function muerte(who) {
             if (who === "p") {
                 --pVidas;
                 updateVidas();
                 if (pVidas === 0) {
-                    fin(who);
+                    // RESULTAT: GUANYA COMPUTER
+                    fin();
+                }
+            }
+            else if (who === "c") {
+                --cVidas;
+                updateVidas();
+                if (cVidas === 0) {
+                    // RESULTAT: GUANYA PLAYER
+                    fin();
                 }
             }
         }
 
+        // quan els dos es disparen
+        function muertedos() {
+            --pVidas;
+            --cVidas;
+            updateVidas();
+            if (pVidas === 0 && cVidas === 0) {
+                // RESULTAT: EMPATEN PLAYER I COMPUTER
+                fin();
+            }
+        }
+
+        // actualitza valor de les vides dels jugadors
         function updateVidas() {
             document.getElementById("afegir_pvidas").textContent = "Vidas: "+ pVidas;
             document.getElementById("afegir_cvidas").textContent = "Vidas: "+ cVidas;
         }
 
-        function fin(who) {
+        // quan algu perd definitivament la partida (vidas = 0)
+        function fin() {
             pRecarga = 0;
             cRecarga = 0;
+            updateValors();
             pVidas = 1;
             cVidas = 1;
-            updateValors();
             updateVidas();
         }
     </script>
