@@ -342,6 +342,7 @@ Whoever runs out of lives first, loses.
             // quan algu perd definitivament la partida (vidas = 0)
             function fin(g) {
                 // 0: guanya computer, 1: guanya player, 2: empaten
+                btnStart = document.getElementById('start-win');
                 if (g === 1) {
                     var overlay = document.getElementById('winOverlay'),
                     popup = document.getElementById('winPopup');
@@ -353,7 +354,6 @@ Whoever runs out of lives first, loses.
                     btnStart = document.getElementById('start-lose');
                 }
                 btnCerrarPopup = document.getElementById('btn-cerrar-popup'),
-                btnStart = document.getElementById('btn-start');
                 overlay.classList.add('active');
                 popup.classList.add('active');
 
@@ -361,6 +361,7 @@ Whoever runs out of lives first, loses.
                     e.preventDefault();
                     overlay.classList.remove('active');
                     popup.classList.remove('active');
+                    start();
                 });
             }
 
