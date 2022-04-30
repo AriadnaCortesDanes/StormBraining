@@ -112,7 +112,7 @@ body {
     height: 100%;
 }
 
-.Start {
+.btn-start {
 	margin-top: 20px;
 	padding: 0 20px;
 	height: 40px;
@@ -127,7 +127,7 @@ body {
 	transition: .3s ease all;
 }
 
-.Start:hover {
+.btn-start:hover {
 	background: #008168;
 }
 
