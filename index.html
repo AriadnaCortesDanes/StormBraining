@@ -320,12 +320,6 @@ Whoever runs out of lives first, loses.
 
             // quan algu perd definitivament la partida (vidas = 0)
             function fin() {
-                pRecarga = 0;
-                cRecarga = 0;
-                updateValors();
-                pVidas = 1;
-                cVidas = 1;
-                updateVidas();
                 var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
                 overlay = document.getElementById('winOverlay'),
                 popup = document.getElementById('winPopup'),
@@ -336,7 +330,12 @@ Whoever runs out of lives first, loses.
             }
 
             function start() {
-                
+                pRecarga = 0;
+                cRecarga = 0;
+                updateValors();
+                pVidas = 1;
+                cVidas = 1;
+                updateVidas();
             }
             
             function nextRound() {
