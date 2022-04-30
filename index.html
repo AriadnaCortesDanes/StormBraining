@@ -179,8 +179,8 @@ Whoever runs out of lives first, loses.
 
                 // si el jugador decideix disparar
                 if (pInput === "Dispara") {
-                    if (pRecarga === 0) {}
-                    else if (cInput === "escut") {
+                    // if (pRecarga === 0) {}
+                    if (cInput === "escut") {
                         --pRecarga;
                     }
                     else if (cInput === "vidas") {
@@ -188,14 +188,20 @@ Whoever runs out of lives first, loses.
                     }
                     else if (cInput === "recarga") {
                         cRecarga++;
-                        // si pRecarga > 0
-                        --pRecarga;
-                        muerte("c");
+                        if (pRecarga > 0)  {
+                            --pRecarga;
+                            muerte("c");
+                        }
                     }
                     else if (cInput === "dispara") {
-                        --pRecarga;
                         --cRecarga;
-                        muertedos(); // quan es disparen els dos alhora
+                        if (pRecarga > 0) {
+                            --pRecarga;
+                            muertedos(); // quan es disparen els dos alhora
+                        }
+                        else {
+                            muerte("p");
+                        }
                     }
                 }
 
