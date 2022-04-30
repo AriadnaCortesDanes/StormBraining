@@ -112,8 +112,33 @@ body {
     height: 100%;
 }
 
+.Start {
+	margin-top: 20px;
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #009578;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.Start:hover {
+	background: #008168;
+}
+
 #container {
     text-align: center;
+}
+
+#Start {
+	position: fixed;
+	left: 46%;
+	top: 80%;
 }
 
 /* Aspect of buttons recarga/ dispara/ escut */
