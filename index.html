@@ -46,8 +46,7 @@
     </button>
 
 
-        <h2>
-            MyName:
+        <h2 id="nomUsuari">
         </h2>
         <p id="afegir_precarga">
                 Recarga:
@@ -147,6 +146,9 @@ Whoever runs out of lives first, loses.
 
         
         <script>
+            const name = prompt("What's your name? :)")
+            document.getElementById("nomUsuari").innerHTML += (name + ":");
+
             const options = document.querySelectorAll(".options");
 
             let pRecarga = 0;
