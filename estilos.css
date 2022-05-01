@@ -68,20 +68,27 @@ body {
 	cursor: pointer;
 }
 .contenedor {
+	font-family: 'Montserrat', sans-serif;
 	width: 90%;
 	max-width: 1000px;
 	margin: 20px auto;
+	padding: 0 40px;
 }
 
 .contenedor .logo {
 	text-align: center;
 }
 
-.contenedor  h1 {
+.contenedor  h2 {
+	font-family: 'Montserrat', sans-serif;
 	font-size: 50px;
 	text-align: center;
 	padding: 50px 0;
+	font-weight: 300;
+	margin-bottom: 20px;
+	opacity: 0;
 }
+
 
 .contenedor  p {
 	margin-bottom: 20px;
