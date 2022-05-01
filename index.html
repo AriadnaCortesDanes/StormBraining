@@ -147,6 +147,10 @@ Whoever runs out of lives first, loses.
 
         
         <script>
+
+            var prova = document.getElementById("Vidas");
+            
+
             const name = prompt("What's your name? :)")
             document.getElementById("nomUsuari").innerHTML += (name + ":");
 
@@ -185,6 +189,8 @@ Whoever runs out of lives first, loses.
                 while (numRondes % 5 != 0 && cInput === "vidas") {
                     cInput = cOptions[Math.floor(Math.random() * 4)];
                 }
+
+                if (numRondes % 5 == 0) prova.disabled = true;
 
                 // et mostra el que fa el bot amb delay
                 setTimeout(function(){
@@ -381,6 +387,7 @@ Whoever runs out of lives first, loses.
                 updateVidas();
                 document.getElementById("botresponse").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/480px-Question_mark_%28black%29.svg.png"
                 numRondes = 0;
+                
             }
             
                      
