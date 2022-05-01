@@ -168,7 +168,12 @@ Whoever runs out of lives first, loses.
                 const cInput = cOptions[Math.floor(Math.random() * 4)];
 
                 document.getElementById("quefacomputer").innerHTML = pInput;
+                document.getElementById("quefacomputer").innerHTML += "  ";
                 document.getElementById("quefacomputer").innerHTML += cInput;
+                document.getElementById("quefacomputer").innerHTML += "  ";
+                document.getElementById("quefacomputer").innerHTML += numRondes;
+
+                ++numRondes;
 
                 setTimeout(function(){
                     document.getElementById("botresponse").src = document.getElementById(cInput).src;
