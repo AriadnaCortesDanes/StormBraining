@@ -6,7 +6,7 @@
 
 body {
 	background: #fff;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	padding: 0 30px;
 }
 
@@ -21,7 +21,6 @@ body {
 	outline: none;
 	border-radius: 15px;
 	overflow: hidden;
-	font-family: 'Quicksand', sans-serif;
 	font-size: 25px;
 	font-weight: 500;
 	cursor: pointer;
@@ -45,7 +44,6 @@ body {
 	outline: none;
 	border-radius: 5px;
 	overflow: hidden;
-	font-family: 'Quicksand', sans-serif;
 	font-size: 25px;
 	font-weight: 500;
 	cursor: pointer;
@@ -62,17 +60,15 @@ body {
 	outline: none;
 	border-radius: 5px;
 	overflow: hidden;
-	font-family: 'Quicksand', sans-serif;
 	font-size: 25px;
 	font-weight: 500;
 	cursor: pointer;
 }
 .contenedor {
-	font-family: 'Montserrat', sans-serif;
 	width: 90%;
 	max-width: 1000px;
 	margin: 20px auto;
-	padding: 0 40px;
+	padding: 20px 0;
 }
 
 .contenedor .logo {
@@ -80,7 +76,6 @@ body {
 }
 
 .contenedor  h2 {
-	font-family: 'Montserrat', sans-serif;
 	font-size: 50px;
 	text-align: center;
 	padding: 50px 0;
@@ -103,7 +98,6 @@ body {
 	color: #fff;
 	background: #5E7DE3;
 	border-radius: 6px;
-	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	cursor: pointer;
 	transition: .3s ease all;
@@ -144,7 +138,6 @@ body {
 	color: #fff;
 	background: #009578;
 	border-radius: 3px;
-	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	cursor: pointer;
 	transition: .3s ease all;
@@ -208,6 +201,9 @@ body {
 	top: 82%;
 }
 
+#nomUsuari {
+}
+
 
 /* ------------------------- */
 /* POPUP */
@@ -234,7 +230,6 @@ body {
 	background: #F8F8F8;
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
 	border-radius: 3px;
-	font-family: 'Montserrat', sans-serif;
 	padding: 20px;
 	text-align: center;
 	width: 600px;
@@ -295,7 +290,6 @@ body {
 	color: #fff;
 	background: #009578;
 	border-radius: 3px;
-	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	cursor: pointer;
 	transition: .3s ease all;
