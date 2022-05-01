@@ -163,6 +163,9 @@ Whoever runs out of lives first, loses.
             let cVidas = 1;
             let numRondes = 0;
 
+            var botodispara = document.getElementById("Dispara");
+            botodispara.disabled = pRecarga === 0;
+
             document.getElementById("afegir_precarga").innerHTML += pRecarga;
             document.getElementById("afegir_crecarga").innerHTML += cRecarga;
             document.getElementById("afegir_pvidas").innerHTML += pVidas;
@@ -194,11 +197,13 @@ Whoever runs out of lives first, loses.
                 if (numRondes % 5 === 0) prova.disabled = false;
                 else prova.disabled = true;
 
+                //botodispara.disabled = pRecarga === 0;
+
                 // et mostra el que fa el bot amb delay
                 setTimeout(function(){
                     document.getElementById("botresponse").src = document.getElementById(cInput).src;
                     compareInputs(pInput, cInput);
-                    updateValors();},500);
+                    updateValors();},0);
                 });
             });
 
@@ -298,7 +303,9 @@ Whoever runs out of lives first, loses.
 
                 //if (cInput === "Recarga") {
                     //  cRecarga++;
-                //}              
+                //}       
+                
+                botodispara.disabled = pRecarga === 0;
             }
 
             // actualitza el valor de les recargues
@@ -389,7 +396,9 @@ Whoever runs out of lives first, loses.
                 updateVidas();
                 document.getElementById("botresponse").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/480px-Question_mark_%28black%29.svg.png"
                 numRondes = 0;
-                
+                if (numRondes % 5 === 0) prova.disabled = false;
+                else prova.disabled = true;
+                botodispara.disabled = pRecarga === 0;
             }
             
                      
