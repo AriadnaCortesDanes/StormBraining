@@ -49,19 +49,19 @@
         <h2 id="nomUsuari">
         </h2>
         <p id="afegir_precarga">
-                Recarga:
+                Recharge:
         </p>   
         <p id="afegir_pvidas">
-                Vidas: 
+                Lives: 
         </p>
         <h2>
             Computer:
         </h2>
         <p id="afegir_crecarga">
-            Recarga:
+                Recharge:
         </p>
         <p id="afegir_cvidas">
-                Vidas: 
+                Lives: 
         </p>
         <p id="quefacomputer"></p>
 
@@ -284,8 +284,8 @@ Whoever runs out of lives first, loses.
 
             // actualitza el valor de les recargues
             function updateValors() {
-                document.getElementById("afegir_precarga").textContent = "Recarga: "+ pRecarga;
-                document.getElementById("afegir_crecarga").textContent = "Recarga: "+ cRecarga;
+                document.getElementById("afegir_precarga").textContent = "Recharge: "+ pRecarga;
+                document.getElementById("afegir_crecarga").textContent = "Recharge: "+ cRecarga;
             }
 
             // quan algu perd una vida
@@ -329,8 +329,8 @@ Whoever runs out of lives first, loses.
 
             // actualitza valor de les vides dels jugadors
             function updateVidas() {
-                document.getElementById("afegir_pvidas").textContent = "Vidas: "+ pVidas;
-                document.getElementById("afegir_cvidas").textContent = "Vidas: "+ cVidas;
+                document.getElementById("afegir_pvidas").textContent = "Lives: "+ pVidas;
+                document.getElementById("afegir_cvidas").textContent = "Lives: "+ cVidas;
             }
 
             // quan algu perd definitivament la partida (vidas = 0)
