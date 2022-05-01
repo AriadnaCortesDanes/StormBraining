@@ -6,7 +6,7 @@
     document.getElementById("nomUsuari").innerHTML += (name + ":");
 
     const options = document.querySelectorAll(".options");
-
+    
     let pRecarga = 0;
     let cRecarga = 0;
     let pVidas = 1;

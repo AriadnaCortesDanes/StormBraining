@@ -12,7 +12,6 @@
 <body>
 	<div id= "container" class="contenedor">
 		<img id="logo" src="logo.png">
-        <img id="brain" src="StormBraining_logo.jpg" width="100" heigth="100">
         <button id="btn-abrir-popup" class="btn-abrir-popup">
             <span class = "button__text"> How to play? </span>
             <span class = "button__icon">
@@ -24,49 +23,50 @@
 	</div>
 
     <!-- codi de logica del joc-->
-    <button id= "Recarga" class="options">
-        <img id="recarga" src="https://icons-for-free.com/download-icon-refresh+reload+update+icon-1320191166843452904_256.png"
-        width = "120" height = "120">
-    </button>
-    <button id= "Escut" class="options"><img id="escut" src="https://images.emojiterra.com/google/android-11/512px/1f6e1.png"
-        width = "120" height = "120">
-    </button>
-    <button id= "Dispara" class="options"><img id="dispara" src="https://images.vexels.com/media/users/3/158137/isolated/preview/9c38dddc84fdc68a27ca10230595f183-icono-detallado-de-revolver.png"
-        width = "120" height = "120">
-    </button>
-    <button id= "Vidas" class="options"><img id="vidas" src="https://www.heypoorplayer.com/wp-content/uploads/2014/06/heart-e1403272720870.png"
-        width = "120" height = "120">
-    </button>
+    <div class="contenedor-bot">
+        <div id = "ppuntuation" class="puntuacion">
+            <h2 id="nomUsuari">
+            </h2>
+            <p id="afegir_precarga">
+                    Recharge:
+            </p>   
+            <p id="afegir_pvidas">
+                    Lives: 
+            </p>
+        </div>
+        <button id="BotResponse" class="buttonResult">
+            <img id="botresponse" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/480px-Question_mark_%28black%29.svg.png"
+            width = "120" height = "120">
+        </button>
+        <div id= "cpuntuation" class="puntuacion">
+            <h2>
+                Computer:
+            </h2>
+            <p id="afegir_crecarga">
+                    Recharge:
+            </p>
+            <p id="afegir_cvidas">
+                    Lives: 
+            </p>
+            <p id="quefacomputer"></p>
+        </div>
+    </div>
     
-    </button>
-    <button id="BotResponse" class="buttonResult">
-        <img id="botresponse" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/480px-Question_mark_%28black%29.svg.png"
-        width = "120" height = "120">
-    </button>
-
-    <div id = "ppuntuation">
-        <h2 id="nomUsuari">
-        </h2>
-        <p id="afegir_precarga">
-                Recharge:
-        </p>   
-        <p id="afegir_pvidas">
-                Lives: 
-        </p>
+    <div class="contenedor-botones">
+        <button id= "Recarga" class="options">
+            <img id="recarga" src="https://icons-for-free.com/download-icon-refresh+reload+update+icon-1320191166843452904_256.png"
+            width = "120" height = "120">
+        </button>
+        <button id= "Escut" class="options"><img id="escut" src="https://images.emojiterra.com/google/android-11/512px/1f6e1.png"
+            width = "120" height = "120">
+        </button>
+        <button id= "Dispara" class="options"><img id="dispara" src="https://images.vexels.com/media/users/3/158137/isolated/preview/9c38dddc84fdc68a27ca10230595f183-icono-detallado-de-revolver.png"
+            width = "120" height = "120">
+        </button>
+        <button id= "Vidas" class="options"><img id="vidas" src="https://www.heypoorplayer.com/wp-content/uploads/2014/06/heart-e1403272720870.png"
+            width = "120" height = "120">
+        </button>
     </div>
-    <div id= "cpuntuation">
-        <h2>
-            Computer:
-        </h2>
-        <p id="afegir_crecarga">
-                Recharge:
-        </p>
-        <p id="afegir_cvidas">
-                Lives: 
-        </p>
-        <p id="quefacomputer"></p>
-    </div>
-        
     <!--<button id="Start" class="btn-start">
             <span class = "button__text"> START! </span>
             <span class = "button__icon">
@@ -74,6 +74,7 @@
             </span> 
         </button>
     -->
+
         <div class="overlay" id="overlay">
 			<div class="popup" id="popup">
 				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>

@@ -5,14 +5,17 @@
 }
 
 body {
-	background: #fff;
-	font-family: 'Montserrat', sans-serif;
-	padding: 0 30px;
+	background: #fff url(StormBraining_logo.jpg);
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 30px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+	min-height: 100vh;
 }
 
 .options {
 	display: inline-flex;
-	align: center;
 	padding: 8px;
 	background: #009578;
 	border: none;
@@ -46,7 +49,6 @@ body {
 
 .btn-count {
 	display: inline-flex;
-	align: center;
 	width: 75px;
 	height: 75px;
 	padding: 0;
@@ -60,10 +62,9 @@ body {
 	cursor: pointer;
 }
 .contenedor {
-	width: 90%;
 	max-width: 1000px;
-	margin: 20px auto;
-	padding: 20px 0;
+    margin: 0 auto 20px auto;
+    padding: 20px 0 10vh;
 }
 
 .contenedor .logo {
@@ -107,6 +108,24 @@ body {
 	background: rgba(94,125,227, .9);
 }
 
+.contenedor-botones {
+	margin: 0 auto;
+	max-width: 750px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.contenedor-bot {
+	margin: 0 auto;
+    margin-bottom: 14vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .button__text,
 .button__icon {
     display: inline-flex;
@@ -146,62 +165,18 @@ body {
     text-align: center;
 }
 
-#ppuntuation {
-	position: fixed;
-	left: 23%;
-	top: 32%;
-	color:#008168;
+.puntuacion {
+    color: #008168;
+    width: 243px;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 11%);
+    border-radius: 16px;
+    padding: 16px 24px;
+    border: solid 1px #efefef;
 }
 
-#cpuntuation {
-	position: fixed;
-	left: 68%;
-	top: 32%;
-	color: #008168;
-}
-
-/*
-#Start {
-	position: fixed;
-	left: 46%;
-	top: 80%;
-}
-*/
-/* Aspect of buttons recarga/ dispara/ escut */
-
-
-#Recarga {
-	position: fixed;
-	left: 23%;
-	top: 60%;
-}
-#Dispara {
-	position: fixed;
-	left: 38%;
-	top: 60%;
-}
-#Escut {
-	position: fixed;
-	left: 53%;
-	top: 60%;
-}
-#Vidas {
-	position: fixed;
-	left: 68%;
-	top: 60%;
-}
 
 #BotResponse {
 	border-radius: 15px;
-	position: fixed;
-	left: 45.3%;
-	top: 25%;
-}
-
-#count {
-	position: fixed;
-	left: 47%;
-	top: 47%;
 }
 
 #brain {
@@ -210,7 +185,9 @@ body {
 	top: 82%;
 }
 
-#nomUsuari {
+#logo{
+	width: 100%;
+    max-width: 455px;
 }
 
 
