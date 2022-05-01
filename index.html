@@ -182,9 +182,9 @@ Whoever runs out of lives first, loses.
                 if (cInput === "dispara" && cRecarga == 0) {
                     cInput = "recarga";
                 }
-                //while (numRondes % 4 != 0 && cInput === "vidas") {
-                    //cInput = cOptions[Math.floor(Math.random() * 4)];
-                //}
+                while (numRondes % 5 != 0 && cInput === "vidas") {
+                    cInput = cOptions[Math.floor(Math.random() * 4)];
+                }
 
                 // et mostra el que fa el bot amb delay
                 setTimeout(function(){
