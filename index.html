@@ -146,6 +146,28 @@ Whoever runs out of lives first, loses.
 			</div>
 		</div>
 
+        <div class="overlay" id="tieOverlay">
+			<div class="popup" id="tiePopup">
+				<h3>IT'S A TIE :/</h3>
+				<h4>Try again!</h4>
+				<form action="">
+					<div class="contenedor-inputs">
+                        <p>
+                           You can play again with the Start! button.
+                           It's a shame you are not capable to win the computer.
+                        </p>
+					</div>
+                    <button id="start-tie" class="btn-start">
+                        <span class = "button__text"> START! </span>
+                        <span class = "button__icon">
+                            <ion-icon name="checkmark-circle-outline"></ion-icon>
+                        </span> 
+               
+                    </button>
+				</form>
+			</div>
+		</div>
+
         
         <script>
 
@@ -224,7 +246,7 @@ Whoever runs out of lives first, loses.
                     if (cInput === "recarga") {
                         cRecarga++;
                     }
-                    else if (cInput === "dispara") {
+                    else if (cInput === "dispara" && cRecarga > 0) {
                         --cRecarga;
                         muerte("p");
                     }
@@ -365,7 +387,7 @@ Whoever runs out of lives first, loses.
 
                 setTimeout(function(){
                     btnStart = document.getElementById('start-win');
-                if (g === 1 || g === 2) {
+                if (g === 1) {
                     var overlay = document.getElementById('winOverlay'),
                     popup = document.getElementById('winPopup');
                     btnStart = document.getElementById('start-win');
@@ -374,6 +396,11 @@ Whoever runs out of lives first, loses.
                     var overlay = document.getElementById('loseOverlay'),
                     popup = document.getElementById('losePopup');
                     btnStart = document.getElementById('start-lose');
+                }
+                else if (g === 2) {
+                    var overlay = document.getElementById('tieOverlay'),
+                    popup = document.getElementById('tiePopup');
+                    btnStart = document.getElementById('start-tie');
                 }
                 btnCerrarPopup = document.getElementById('btn-cerrar-popup'),
                 overlay.classList.add('active');
