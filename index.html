@@ -91,14 +91,14 @@
 				<form action="">
 					<div class="contenedor-inputs">
                         <p>
-                            We present you our game dan dan dish! It is a very simple game and it is really fun to play.
-You will play with a bot and your objective is to not get killed so you can win the game.
-In each round you will have to click one of these four icons
+                            We present you our game Dan Dan Dish! It is a very simple game and it is really fun to play.
+You will play with a bot and your objective is to kill the bot before it kills you.
+In each round you will have to click one of these four icons.
 <br \> <br \>
-If you click the recharge icon you will have one more bullet to shoot in another round
-If you click the gun, you will shoot the bot and it will have one life less.  
+If you click the recharge icon you will have one more bullet to shoot in another round.
+If you click the gun, you will shoot the bot and it will have one life less. If you have no charges, gun has no effect. 
 If you click the shield and the bot shoots you in the same round, the bullet won’t take you any life
-If you click the heart you will have one more life
+If you click the heart you will have one more life.
 Whoever runs out of lives first, loses.
                         </p>
 					</div>
@@ -176,13 +176,13 @@ Whoever runs out of lives first, loses.
                 const cOptions = ["recarga", "escut", "dispara", "vidas"];
                 const cInput = cOptions[Math.floor(Math.random() * 4)];
 
-                document.getElementById("botresponse").src = document.getElementById(cInput).src;
-
                 document.getElementById("quefacomputer").innerHTML = pInput;
                 document.getElementById("quefacomputer").innerHTML += cInput;
 
-                compareInputs(pInput, cInput);
-                updateValors();
+                setTimeout(function(){
+                    document.getElementById("botresponse").src = document.getElementById(cInput).src;
+                    compareInputs(pInput, cInput);
+                    updateValors();},500);
               });
             });
 
