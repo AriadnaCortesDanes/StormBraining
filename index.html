@@ -42,7 +42,6 @@
     <button id="BotResponse" class="buttonResult">
         <img id="botresponse" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/480px-Question_mark_%28black%29.svg.png"
         width = "120" height = "120">
-        <span class = "button__text2"> BOT </span>
     </button>
 
     <div id = "ppuntuation">
@@ -151,7 +150,7 @@ Whoever runs out of lives first, loses.
         <script>
 
             var prova = document.getElementById("Vidas");
-            
+            prova.disabled = true;
 
             const name = prompt("What's your name? :)")
             document.getElementById("nomUsuari").innerHTML += (name + ":");
@@ -176,23 +175,24 @@ Whoever runs out of lives first, loses.
                 const cOptions = ["recarga", "escut", "dispara", "vidas"];
                 let cInput = cOptions[Math.floor(Math.random() * 4)];
 
-                document.getElementById("quefacomputer").innerHTML = pInput;
-                document.getElementById("quefacomputer").innerHTML += "  ";
-                document.getElementById("quefacomputer").innerHTML += cInput;
-                document.getElementById("quefacomputer").innerHTML += "  ";
-                document.getElementById("quefacomputer").innerHTML += numRondes;
+                // document.getElementById("quefacomputer").innerHTML = pInput;
+                // document.getElementById("quefacomputer").innerHTML += "  ";
+                // document.getElementById("quefacomputer").innerHTML += cInput;
+                // document.getElementById("quefacomputer").innerHTML += "  ";
+                // document.getElementById("quefacomputer").innerHTML += numRondes;
 
                 ++numRondes;
 
                 // si el computer intenta dispara i no te recargas, fa una recarga
-                if (cInput === "dispara" && cRecarga == 0) {
+                if (cInput === "dispara" && cRecarga === 0) {
                     cInput = "recarga";
                 }
                 while (numRondes % 5 != 0 && cInput === "vidas") {
                     cInput = cOptions[Math.floor(Math.random() * 4)];
                 }
 
-                if (numRondes % 5 == 0) prova.disabled = true;
+                if (numRondes % 5 === 0) prova.disabled = false;
+                else prova.disabled = true;
 
                 // et mostra el que fa el bot amb delay
                 setTimeout(function(){
