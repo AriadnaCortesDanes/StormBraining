@@ -77,7 +77,6 @@ body {
 	text-align: center;
 }
 
-
 .contenedor  h1 {
 	font-size: 50px;
 	text-align: center;
@@ -194,6 +193,12 @@ body {
 	position: fixed;
 	left: 47%;
 	top: 47%;
+}
+
+#brain {
+	position: fixed;
+	left: 5%;
+	top: 85%;
 }
 
 
