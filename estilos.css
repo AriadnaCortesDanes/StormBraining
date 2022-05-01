@@ -146,6 +146,20 @@ body {
     text-align: center;
 }
 
+#ppuntuation {
+	position: fixed;
+	left: 23%;
+	top: 32%;
+	color:#008168;
+}
+
+#cpuntuation {
+	position: fixed;
+	left: 68%;
+	top: 32%;
+	color: #008168;
+}
+
 /*
 #Start {
 	position: fixed;
