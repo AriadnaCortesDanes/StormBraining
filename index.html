@@ -165,7 +165,7 @@ Whoever runs out of lives first, loses.
                 const pInput = this.id;
                 
                 const cOptions = ["recarga", "escut", "dispara", "vidas"];
-                const cInput = cOptions[Math.floor(Math.random() * 4)];
+                let cInput = cOptions[Math.floor(Math.random() * 4)];
 
                 document.getElementById("quefacomputer").innerHTML = pInput;
                 document.getElementById("quefacomputer").innerHTML += "  ";
@@ -175,11 +175,17 @@ Whoever runs out of lives first, loses.
 
                 ++numRondes;
 
+                // si el computer intenta dispara i no te recargas, fa una recarga
+                if (cInput === "dispara" && cRecarga == 0) {
+                    cInput = "recarga";
+                }
+
+                // et mostra el que fa el bot amb delay
                 setTimeout(function(){
                     document.getElementById("botresponse").src = document.getElementById(cInput).src;
                     compareInputs(pInput, cInput);
                     updateValors();},500);
-              });
+                });
             });
 
             function compareInputs(pInput, cInput) {
@@ -188,11 +194,6 @@ Whoever runs out of lives first, loses.
                    // alert(`${currentMatch} is a Tie`);
                     //return;
                 //}
-
-                // si el computer intenta dispara i no te recargas, fa una recarga
-                if (cInput === "dispara" && cRecarga == 0) {
-                    cInput = "recarga";
-                }
 
                 // si el jugador decideix recarregar
                 if (pInput === "Recarga") {
