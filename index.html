@@ -339,7 +339,7 @@ Whoever runs out of lives first, loses.
             function fin(g) {
                 // 0: guanya computer, 1: guanya player, 2: empaten
                 btnStart = document.getElementById('start-win');
-                if (g === 1) {
+                if (g === 1 or g === 2) {
                     var overlay = document.getElementById('winOverlay'),
                     popup = document.getElementById('winPopup');
                     btnStart = document.getElementById('start-win');
@@ -368,6 +368,7 @@ Whoever runs out of lives first, loses.
                 pVidas = 1;
                 cVidas = 1;
                 updateVidas();
+                document.getElementById("botresponse").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/480px-Question_mark_%28black%29.svg.png"
             }
             
                      
