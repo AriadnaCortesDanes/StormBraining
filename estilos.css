@@ -111,7 +111,7 @@ body {
 }
 
 .contenedor-botones {
-	margin: 0 auto;
+	margin: 0 auto 100px auto;
 	max-width: 750px;
 	width: 100%;
 	display: flex;
